@@ -1,0 +1,5 @@
+indicator_id,indicator,sex,age_group,value_percent,period,interpretation,source
+NFHS6_80,Womens blood sugar high or very high (>140 mg/dL) or taking medicine,women,15 years and above,17.8,2023-24,Composite measured blood sugar/medication indicator; not a clinical diabetes diagnosis,MoHFW NFHS-6 national fact sheet / PIB release 2026
+NFHS6_83,Mens blood sugar high or very high (>140 mg/dL) or taking medicine,men,15 years and above,20.9,2023-24,Composite measured blood sugar/medication indicator; not a clinical diabetes diagnosis,MoHFW NFHS-6 national fact sheet / PIB release 2026
+NFHS6_86,Women with elevated blood pressure (>=140 systolic and/or >=90 diastolic) or taking medicine,women,15 years and above,19.4,2023-24,Composite measured blood pressure/medication indicator; not a clinical CVD diagnosis,MoHFW NFHS-6 national fact sheet / PIB release 2026
+NFHS6_89,Men with elevated blood pressure (>=140 systolic and/or >=90 diastolic) or taking medicine,men,15 years and above,22.1,2023-24,Composite measured blood pressure/medication indicator; not a clinical CVD diagnosis,MoHFW NFHS-6 national fact sheet / PIB release 2026
