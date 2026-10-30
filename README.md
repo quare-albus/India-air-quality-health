@@ -1,7 +1,7 @@
 # India Air Quality & Health
 
-**Version:** v1.0.0  
-**Status:** Initial scaffold  
+**Version:** v1.1.0  
+**Status:** 2024 pilot pipeline implemented; data execution pending  
 **Scope:** India-wide national-level analysis; no state- or district-wise mapping in the primary output.
 
 ## Aim
@@ -61,11 +61,11 @@ The planned communication output is one national-level graphic combining exposur
 
 ## Project status
 
-This repository contains the initial project scaffold only. No final national exposure estimate or disease association has yet been calculated in this project.
+**v1.1.0 — 2024 pilot pipeline implemented.** The reproducible XKDR ingestion and city-aggregation script, NFHS-6 national context indicators, and pilot methods are in place. The pipeline has not yet been run against the source files, so no city-level air-quality estimates are published. No disease association or causal effect has been calculated.
 
 ## Versioning
 
-Visible project version: **v1.0.0**. Increment the version for every user-visible project update and record material changes in the changelog.
+Visible project version: **v1.1.0**. Increment the version for every user-visible project update and record material changes in the changelog.
 
 ## License
 
