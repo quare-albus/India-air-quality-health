@@ -112,18 +112,23 @@ def main() -> int:
 
     con.execute(f"""
         CREATE OR REPLACE TEMP VIEW station_annual AS
-        SELECT station_id, any_value(station_name) AS station_name,
-               any_value(state_name) AS state_name,
-               any_value(city_name) AS city_name,
-               parameter_name,
-               count(*) AS valid_hours,
-               count(*) / {EXPECTED_HOURS}.0 AS completeness,
-               avg(hourly_value) AS annual_mean_ug_m3,
-               sum(source_rows - 1) AS duplicate_rows_collapsed,
-               min(collected_at) AS first_observation_2024,
-               max(collected_at) AS last_observation_2024
-        FROM hourly
-        GROUP BY station_id, parameter_name
+        WITH station_stats AS (
+            SELECT station_id, any_value(station_name) AS station_name,
+                   any_value(state_name) AS state_name,
+                   any_value(city_name) AS city_name,
+                   parameter_name,
+                   count(*) AS valid_hours,
+                   count(*) / {EXPECTED_HOURS}.0 AS completeness,
+                   avg(hourly_value) AS annual_mean_ug_m3,
+                   sum(source_rows - 1) AS duplicate_rows_collapsed,
+                   min(collected_at) AS first_observation_2024,
+                   max(collected_at) AS last_observation_2024
+            FROM hourly
+            GROUP BY station_id, parameter_name
+        )
+        SELECT stats.*, meta.latitude, meta.longitude
+        FROM station_stats AS stats
+        LEFT JOIN read_parquet(${stations_sql}) AS meta USING (station_id)
     """)
 
     con.execute(f"""
